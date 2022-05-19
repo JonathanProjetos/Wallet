@@ -34,7 +34,7 @@ class Wallet extends Component {
     });
   }
 
-  handleClick = async () => {
+  handleClick = () => {
     const { getForm, fetchSymbolsApi } = this.props;
     this.setState((previ) => ({
       id: previ.id + 1,
@@ -44,8 +44,8 @@ class Wallet extends Component {
       tag: '',
       description: '',
     }));
-    await fetchSymbolsApi();
-    await getForm(this.state);
+    fetchSymbolsApi();
+    getForm(this.state);
   }
 
   render() {
@@ -55,7 +55,7 @@ class Wallet extends Component {
         <nav>
           <Header />
         </nav>
-        <section>
+        <section className="App-Test">
           <InputValor
             value={ value }
             handleChange={ this.handleChange }

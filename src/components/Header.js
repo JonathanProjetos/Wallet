@@ -10,18 +10,14 @@ class Header extends Component {
     };
   }
 
-  componentDidMount() {
-    // const { setExpenses } = this.props;
-  }
-
-  calculaTotal = () => {
-
-  }
-  // chamar a função no lugar de despesas this.calculaTotal(setExpenses)
-
   render() {
     const { setEmail, setExpenses } = this.props;
-    console.log(setExpenses);
+    let total = 0;
+    setExpenses.forEach((dados) => {
+      const { currency, exchangeRates, value } = dados;
+      total += exchangeRates[currency].ask * Number(value);
+    });
+
     return (
       <section>
         <h1>Trybe Wallet</h1>
@@ -29,7 +25,7 @@ class Header extends Component {
         <h2
           data-testid="total-field"
         >
-          {`Despesa Total: $${'0'}`}
+          {`Despesa Total: $${total.toFixed(2)}`}
         </h2>
         <h2 data-testid="header-currency-field">{`${'BRL'}`}</h2>
       </section>

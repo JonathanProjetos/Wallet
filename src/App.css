@@ -25,6 +25,11 @@
   min-height: 100vh;
 }
 
+.App-Test {
+  display: flex;
+  flex-direction: row;
+}
+
 .App-link {
   color: #61dafb;
 }
