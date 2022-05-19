@@ -1,15 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import { fetchSymbols } from '../actions';
-import mapStateToProps from 'react-redux/lib/connect/mapStateToProps';
 
-class Wallet extends React.Component {
-
+class Wallet extends Component {
   componentDidMount() {
-    const { fetchSymbols } = this.props;
-    fetchSymbols();
+    const { fetchSymbolsApi } = this.props;
+    fetchSymbolsApi();
   }
 
   render() {
@@ -22,11 +20,11 @@ class Wallet extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchSymbols: () => dispatch(fetchSymbols()),
+  fetchSymbolsApi: () => dispatch(fetchSymbols()),
 });
 
 Wallet.propTypes = {
-
+  fetchSymbolsApi: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(Wallet);
