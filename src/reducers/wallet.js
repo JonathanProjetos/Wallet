@@ -1,9 +1,12 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-export const GET_DADOS_API_SYMBOL = 'GET_DADOS_API_SYMBOL';
+import {
+  GET_DADOS_API_SYMBOL,
+  GET_DADOS_FORM_WALLET } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
   expenses: [],
+  exchangeRates: {},
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
@@ -11,7 +14,16 @@ const walletReducer = (state = INITIAL_STATE, action) => {
   case GET_DADOS_API_SYMBOL:
     return {
       ...state,
-      currencies: action.payload,
+      currencies: Object.keys(action.payload).filter((symbol, index) => index !== 1),
+      exchangeRates: action.payload,
+    };
+  case GET_DADOS_FORM_WALLET:
+    return {
+      ...state,
+      expenses: [...state.expenses, {
+        ...action.payload,
+        exchangeRates: { ...state.exchangeRates },
+      }],
     };
   default:
     return state;
