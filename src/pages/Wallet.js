@@ -7,6 +7,7 @@ import SelectMoeda from '../components/SelectMoeda';
 import InputMetodoPagamento from '../components/InputMetodoPagamento';
 import Categoria from '../components/Categoria';
 import Descricao from '../components/Descrição';
+import Tabela from '../components/Tabela';
 import { fetchSymbols, getFormWallet } from '../actions';
 
 class Wallet extends Component {
@@ -83,6 +84,9 @@ class Wallet extends Component {
             Adicionar despesa
           </button>
         </section>
+        <saction>
+          <Tabela />
+        </saction>
       </main>
     );
   }

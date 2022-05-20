@@ -2,9 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tabela {
+  border: solid black 1px;
+  margin: 10px;
 }
 
 @media ( prefers-reduced-motion : no-preference ) {

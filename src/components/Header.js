@@ -3,13 +3,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class Header extends Component {
-  constructor() {
-    super();
-    this.state = {
-      // total: 0,
-    };
-  }
-
   render() {
     const { setEmail, setExpenses } = this.props;
     let total = 0;
