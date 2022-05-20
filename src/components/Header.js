@@ -25,7 +25,7 @@ class Header extends Component {
         <h2
           data-testid="total-field"
         >
-          {`Despesa Total: $${total.toFixed(2)}`}
+          {`${total.toFixed(2)}`}
         </h2>
         <h2 data-testid="header-currency-field">{`${'BRL'}`}</h2>
       </section>
