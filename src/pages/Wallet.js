@@ -16,7 +16,7 @@ class Wallet extends Component {
     this.state = {
       id: 0,
       value: '',
-      currency: '',
+      currency: 'USD',
       method: '',
       tag: '',
       description: '',
@@ -40,7 +40,7 @@ class Wallet extends Component {
     this.setState((previ) => ({
       id: previ.id + 1,
       value: '',
-      currency: '',
+      currency: 'USD',
       method: '',
       tag: '',
       description: '',
@@ -84,9 +84,9 @@ class Wallet extends Component {
             Adicionar despesa
           </button>
         </section>
-        <saction>
+        <section>
           <Tabela />
-        </saction>
+        </section>
       </main>
     );
   }

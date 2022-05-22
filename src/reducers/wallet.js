@@ -1,7 +1,8 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 import {
   GET_DADOS_API_SYMBOL,
-  GET_DADOS_FORM_WALLET } from '../actions';
+  GET_DADOS_FORM_WALLET,
+  REMOVE_ITEM_TABELA } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -24,6 +25,11 @@ const walletReducer = (state = INITIAL_STATE, action) => {
         ...action.payload,
         exchangeRates: { ...state.exchangeRates },
       }],
+    };
+  case REMOVE_ITEM_TABELA:
+    return {
+      ...state,
+      expenses: action.payload,
     };
   default:
     return state;

@@ -6,9 +6,10 @@ class InputMetodoPagamento extends Component {
     const { method, handleChange } = this.props;
     return (
       <div>
-        <labe>
+        <label htmlFor="1">
           Metodo De Pagamento:
           <select
+            id="1"
             name="method"
             data-testid="method-input"
             value={ method }
@@ -18,7 +19,7 @@ class InputMetodoPagamento extends Component {
             <option>Cartão de crédito</option>
             <option>Cartão de débito</option>
           </select>
-        </labe>
+        </label>
       </div>
     );
   }

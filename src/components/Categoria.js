@@ -6,9 +6,10 @@ class Categoria extends Component {
     const { tag, handleChange } = this.props;
     return (
       <div>
-        <labe>
+        <label htmlFor="1">
           Categoria:
           <select
+            id="1"
             name="tag"
             data-testid="tag-input"
             value={ tag }
@@ -20,7 +21,7 @@ class Categoria extends Component {
             <option>Transporte</option>
             <option>Saúde</option>
           </select>
-        </labe>
+        </label>
       </div>
     );
   }
