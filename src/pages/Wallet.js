@@ -20,6 +20,7 @@ class Wallet extends Component {
       method: '',
       tag: '',
       description: '',
+      exchangeRates: {},
     };
   }
 
@@ -35,8 +36,11 @@ class Wallet extends Component {
     });
   }
 
-  handleClick = () => {
+  handleClick = async () => {
     const { getForm, fetchSymbolsApi } = this.props;
+    const resultdoApi = await fetchSymbolsApi();
+    this.setState({ exchangeRates: resultdoApi });
+    getForm(this.state);
     this.setState((previ) => ({
       id: previ.id + 1,
       value: '',
@@ -45,8 +49,6 @@ class Wallet extends Component {
       tag: '',
       description: '',
     }));
-    fetchSymbolsApi();
-    getForm(this.state);
   }
 
   render() {

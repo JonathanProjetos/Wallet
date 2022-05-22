@@ -5,6 +5,13 @@ import { RemoveItemTabela } from '../actions';
 import '../App.css';
 
 class Tabela extends Component {
+  constructor() {
+    super();
+    this.state = {
+      //  value: 0,
+    };
+  }
+
   handleClick = ({ target }) => {
     const { dadosState, removeTabela } = this.props;
     const filtroArray = dadosState.filter((coluna, index) => index !== Number(target.id));
@@ -58,7 +65,10 @@ class Tabela extends Component {
                   <td>Real</td>
                   <td>
                     <button
+                      id={ index }
+                      data-testid="edit-btn"
                       type="button"
+                      onClick={ this.handleClickEdit }
                     >
                       Editar
                     </button>

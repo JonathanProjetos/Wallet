@@ -2,8 +2,8 @@
 export const GET_EMAIL = 'GET_EMAIL';
 export const GET_DADOS_API_SYMBOL = 'GET_DADOS_API_SYMBOL';
 export const GET_DADOS_FORM_WALLET = 'GET_DADOS_FORM_WALLET';
-export const GET_DADOS_ALL_API = 'GET_DADOS_ALL_API';
 export const REMOVE_ITEM_TABELA = 'REMOVE_ITEM_TABELA';
+export const EDIT_TABELA = 'EDIT_TABELA';
 
 export const getEmail = (email) => ({
   type: GET_EMAIL,
@@ -20,14 +20,14 @@ export const getFormWallet = (formResult) => ({
   payload: formResult,
 });
 
-export const getAllDadosApi = (dadosApi) => ({
-  type: GET_DADOS_ALL_API,
-  payload2: dadosApi,
-});
-
 export const RemoveItemTabela = (tabela) => ({
   type: REMOVE_ITEM_TABELA,
-  payload: tabela,
+  payload1: tabela,
+});
+
+export const editTabela = (tabela) => ({
+  type: EDIT_TABELA,
+  payload2: tabela,
 });
 
 export const fetchSymbols = () => async (dispach) => {
@@ -36,7 +36,7 @@ export const fetchSymbols = () => async (dispach) => {
     const response = await fetch(link);
     const result = await response.json();
     dispach(getApiDados(result));
-    dispach(getAllDadosApi(result));
+    return result;
   } catch (error) {
     console.log(error);
   }
