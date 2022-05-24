@@ -5,7 +5,7 @@ class InputMetodoPagamento extends Component {
   render() {
     const { method, handleChange } = this.props;
     return (
-      <div>
+      <div className="spacer">
         <label htmlFor="1">
           Metodo De Pagamento:
           <select

@@ -19,7 +19,7 @@ class Tabela extends Component {
   }
 
   render() {
-    const { dadosState } = this.props;
+    const { dadosState, handleClickEdit } = this.props;
     const titulos = [
       'id',
       'Valor',
@@ -45,30 +45,30 @@ class Tabela extends Component {
             {
               dadosState.map((table, index) => (
                 <tr key={ table.id } className="tabela">
-                  <td>{table.id}</td>
-                  <td>{parseFloat(table.value).toFixed(2)}</td>
-                  <td>{table.exchangeRates[table.currency].name}</td>
-                  <td>{table.method}</td>
-                  <td>{table.tag}</td>
-                  <td>{table.description}</td>
-                  <td>
+                  <td className="tabela">{table.id}</td>
+                  <td className="tabela">{parseFloat(table.value).toFixed(2)}</td>
+                  <td className="tabela">{table.exchangeRates[table.currency].name}</td>
+                  <td className="tabela">{table.method}</td>
+                  <td className="tabela">{table.tag}</td>
+                  <td className="tabela">{table.description}</td>
+                  <td className="tabela">
                     {
                       parseFloat(table.exchangeRates[table.currency].ask).toFixed(2)
                     }
                   </td>
-                  <td>
+                  <td className="tabela">
                     {
                       parseFloat(table.value
                         * table.exchangeRates[table.currency].ask).toFixed(2)
                     }
                   </td>
-                  <td>Real</td>
+                  <td className="tabela">Real</td>
                   <td>
                     <button
                       id={ index }
                       data-testid="edit-btn"
                       type="button"
-                      onClick={ this.handleClickEdit }
+                      onClick={ handleClickEdit }
                     >
                       Editar
                     </button>
@@ -102,6 +102,7 @@ const mapDispatchToProps = (dispatch) => ({
 Tabela.propTypes = {
   dadosState: PropTypes.arrayOf(Object).isRequired,
   removeTabela: PropTypes.func.isRequired,
+  handleClickEdit: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tabela);

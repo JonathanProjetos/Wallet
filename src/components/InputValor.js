@@ -5,7 +5,7 @@ class InputValor extends Component {
   render() {
     const { value, handleChange } = this.props;
     return (
-      <div>
+      <div className="spacer">
         <label htmlFor="1">
           Valor:
           <input

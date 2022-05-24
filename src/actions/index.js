@@ -4,6 +4,7 @@ export const GET_DADOS_API_SYMBOL = 'GET_DADOS_API_SYMBOL';
 export const GET_DADOS_FORM_WALLET = 'GET_DADOS_FORM_WALLET';
 export const REMOVE_ITEM_TABELA = 'REMOVE_ITEM_TABELA';
 export const EDIT_TABELA = 'EDIT_TABELA';
+export const OBJECT_EDIT = 'OBJECT_EDIT';
 
 export const getEmail = (email) => ({
   type: GET_EMAIL,
@@ -25,9 +26,16 @@ export const RemoveItemTabela = (tabela) => ({
   payload1: tabela,
 });
 
-export const editTabela = (tabela) => ({
+export const changeButtonBoolean = (tabela, id) => ({
   type: EDIT_TABELA,
-  payload2: tabela,
+  tabela,
+  id,
+
+});
+
+export const objectEdited = (newState) => ({
+  type: OBJECT_EDIT,
+  newState,
 });
 
 export const fetchSymbols = () => async (dispach) => {

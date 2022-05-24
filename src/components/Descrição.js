@@ -5,7 +5,7 @@ class Descricao extends Component {
   render() {
     const { description, handleChange } = this.props;
     return (
-      <div>
+      <div className="spacer">
         <label htmlFor="1">
           Descrição:
           <input

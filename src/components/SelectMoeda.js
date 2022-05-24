@@ -7,10 +7,11 @@ class SelectMoeda extends Component {
     const { moeda, handleChange, currency } = this.props;
 
     return (
-      <div>
+      <div className="spacer">
         <label htmlFor="moeda">
           Moeda:
           <select
+            data-testid="currency-input"
             id="moeda"
             value={ currency }
             name="currency"

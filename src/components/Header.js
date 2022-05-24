@@ -12,15 +12,20 @@ class Header extends Component {
     });
 
     return (
-      <section>
-        <h1>Trybe Wallet</h1>
-        <h2 data-testid="email-field">{`Email: ${setEmail}`}</h2>
-        <h2
-          data-testid="total-field"
-        >
-          {`${total.toFixed(2)}`}
-        </h2>
-        <h2 data-testid="header-currency-field">{`${'BRL'}`}</h2>
+      <section className="header">
+        <div className="space-block">
+          <h1 className="margins">Trybe Wallet</h1>
+          <h2 data-testid="email-field">{`Email: ${setEmail}`}</h2>
+        </div>
+        <div className="space-block">
+          <h2 data-testid="header-currency-field">{`${'BRL'}`}</h2>
+          <h2
+            className="margins-value"
+            data-testid="total-field"
+          >
+            {`${total.toFixed(2)}`}
+          </h2>
+        </div>
       </section>
     );
   }

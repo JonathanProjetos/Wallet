@@ -5,7 +5,7 @@ class Categoria extends Component {
   render() {
     const { tag, handleChange } = this.props;
     return (
-      <div>
+      <div className="spacer">
         <label htmlFor="1">
           Categoria:
           <select

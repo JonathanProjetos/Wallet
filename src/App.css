@@ -3,15 +3,18 @@
 }
 
 .tabela {
+  background-color: white;
   border: solid black 1px;
+  color: black;
   margin: 10px;
 }
 
-@media ( prefers-reduced-motion : no-preference ) {
+.tabela-position {
+  align-items: center;
+  border: solid white 1px;
+  display: flex;
+  justify-content: center;
 
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -34,13 +37,40 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+.header {
+  background-color: purple;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+}
 
-  from {
-    transform: rotate(0deg);
-  }
+.spacer {
+  margin-right: 10px;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.space-block {
+  align-items: center;
+  display: flex;
+}
+
+.margins {
+  font-size: 40px;
+  margin: 50px;
+}
+
+.margins-value {
+  margin: 20px;
+}
+
+.nav {
+  align-items: center;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.body-color {
+  background-color: rgb(32, 32, 29);
 }
