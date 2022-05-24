@@ -147,8 +147,8 @@ const mapStateToProps = (state) => ({
 Wallet.propTypes = {
   fetchSymbolsApi: PropTypes.func.isRequired,
   getForm: PropTypes.func.isRequired,
-  changeButton: PropTypes.objectOf().isRequired,
-  changeBooolean: PropTypes.func.isRequired,
+  changeButton: PropTypes.func.isRequired,
+  changeBooolean: PropTypes.objectOf(Object).isRequired,
   editFormDados: PropTypes.arrayOf(Object).isRequired,
   objectEditedFinal: PropTypes.func.isRequired,
   // isEditMode: PropTypes.string.isRequired,
