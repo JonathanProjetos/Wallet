@@ -64,7 +64,7 @@ export const TabelaStyle = styled.section`
             border: solid 1px black;
             border-radius: 5px;
             background: #ffffff00;
-            //backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
           }
         }
       }
