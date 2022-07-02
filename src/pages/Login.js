@@ -3,6 +3,8 @@ import '../App.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getEmail } from '../actions';
+import { AppHeader, AppInput, AppLabel } from '../Style/Login';
+import carteira from '../Style/carteira.png';
 
 class Login extends React.Component {
   constructor() {
@@ -50,37 +52,41 @@ class Login extends React.Component {
   render() {
     const { email, senha, btnAcess } = this.state;
     return (
-      <section className="App-header">
-        <label htmlFor="1">
-          Email:
-          <input
-            id="1"
-            name="email"
-            data-testid="email-input"
-            type="text"
-            value={ email }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="2">
-          Password:
-          <input
-            id="2"
-            name="senha"
-            data-testid="password-input"
-            type="password"
-            value={ senha }
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          type="button"
-          onClick={ () => this.handleClick() }
-          disabled={ btnAcess }
-        >
-          Entrar
-        </button>
-      </section>
+      <AppHeader>
+        <div>
+          <img src={ carteira } alt="carteira" />
+          <AppLabel htmlFor="1">
+            <AppInput
+              id="1"
+              placeholder="Email do usuario"
+              name="email"
+              data-testid="email-input"
+              type="text"
+              value={ email }
+              onChange={ this.handleChange }
+            />
+          </AppLabel>
+          <AppLabel>
+            <AppInput
+              id="2"
+              placeholder="Senha"
+              name="senha"
+              data-testid="password-input"
+              type="password"
+              value={ senha }
+              onChange={ this.handleChange }
+            />
+          </AppLabel>
+
+          <button
+            type="button"
+            onClick={ () => this.handleClick() }
+            disabled={ btnAcess }
+          >
+            Entrar
+          </button>
+        </div>
+      </AppHeader>
     );
   }
 }

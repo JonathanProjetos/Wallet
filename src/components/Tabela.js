@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { RemoveItemTabela } from '../actions';
 import '../App.css';
+import prancheta from '../Style/prancheta.png';
+import remover from '../Style/remover.png';
 
 class Tabela extends Component {
   constructor() {
@@ -16,6 +18,10 @@ class Tabela extends Component {
     const { dadosState, removeTabela } = this.props;
     const filtroArray = dadosState.filter((coluna, index) => index !== Number(target.id));
     removeTabela(filtroArray);
+  }
+
+  onKeyPressHandler = () => {
+    console.log('clicou');
   }
 
   render() {
@@ -33,53 +39,56 @@ class Tabela extends Component {
       'Editar/Excluir'];
     return (
       <div>
-        <table className="tabela">
+        <table>
           <thead>
-            <tr className="tabela">
+            <tr>
               { titulos.map((titulo) => (
-                <th key={ titulo } className="tabela">{titulo}</th>
+                <th key={ titulo }>{titulo}</th>
               ))}
             </tr>
           </thead>
-          <tbody className="tabela">
+          <tbody>
             {
               dadosState.map((table, index) => (
-                <tr key={ table.id } className="tabela">
-                  <td className="tabela">{table.id}</td>
-                  <td className="tabela">{parseFloat(table.value).toFixed(2)}</td>
-                  <td className="tabela">{table.exchangeRates[table.currency].name}</td>
-                  <td className="tabela">{table.method}</td>
-                  <td className="tabela">{table.tag}</td>
-                  <td className="tabela">{table.description}</td>
-                  <td className="tabela">
+                <tr key={ table.id }>
+                  <td>{table.id}</td>
+                  <td>{parseFloat(table.value).toFixed(2)}</td>
+                  <td>{table.exchangeRates[table.currency].name}</td>
+                  <td>{table.method}</td>
+                  <td>{table.tag}</td>
+                  <td>{table.description}</td>
+                  <td>
                     {
                       parseFloat(table.exchangeRates[table.currency].ask).toFixed(2)
                     }
                   </td>
-                  <td className="tabela">
+                  <td>
                     {
                       parseFloat(table.value
                         * table.exchangeRates[table.currency].ask).toFixed(2)
                     }
                   </td>
-                  <td className="tabela">Real</td>
+                  <td>Real</td>
                   <td>
-                    <button
+                    <img
+                      src={ prancheta }
                       id={ index }
                       data-testid="edit-btn"
-                      type="button"
                       onClick={ handleClickEdit }
-                    >
-                      Editar
-                    </button>
-                    <button
+                      alt="prancheta"
+                      onKeyPress={ this.onKeyPressHandler }
+                      role="presentation"
+                    />
+
+                    <img
+                      src={ remover }
                       id={ index }
                       data-testid="delete-btn"
-                      type="button"
                       onClick={ this.handleClick }
-                    >
-                      Excluir
-                    </button>
+                      alt="remover"
+                      onKeyPress={ this.onKeyPressHandler }
+                      role="presentation"
+                    />
                   </td>
                 </tr>
               ))
