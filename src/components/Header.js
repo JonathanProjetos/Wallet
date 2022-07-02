@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { CompHeader, CompHeaderDiv } from '../Style/Header';
 
 class Header extends Component {
   render() {
@@ -12,11 +13,11 @@ class Header extends Component {
     });
 
     return (
-      <section className="header">
-        <div className="space-block">
+      <CompHeader className="header">
+        <CompHeaderDiv className="space-block">
           <h1 className="margins">Trybe Wallet</h1>
           <h2 data-testid="email-field">{`Email: ${setEmail}`}</h2>
-        </div>
+        </CompHeaderDiv>
         <div className="space-block">
           <h2 data-testid="header-currency-field">{`${'BRL'}`}</h2>
           <h2
@@ -26,7 +27,7 @@ class Header extends Component {
             {`${total.toFixed(2)}`}
           </h2>
         </div>
-      </section>
+      </CompHeader>
     );
   }
 }

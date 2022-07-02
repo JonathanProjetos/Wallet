@@ -10,6 +10,7 @@ import Descricao from '../components/Descrição';
 import Tabela from '../components/Tabela';
 import { fetchSymbols,
   getFormWallet, changeButtonBoolean, objectEdited } from '../actions';
+import { MainBody, MainSection, TabelaStyle } from '../Style/Wallet';
 
 class Wallet extends Component {
   constructor() {
@@ -78,11 +79,11 @@ class Wallet extends Component {
     const { changeBooolean } = this.props;
     const boolean = changeBooolean ? changeBooolean.isEditMode : false;
     return (
-      <main className="body-color">
+      <MainBody className="body-color">
         <nav>
           <Header />
         </nav>
-        <section className="nav">
+        <MainSection className="nav">
           <InputValor
             value={ value }
             handleChange={ this.handleChange }
@@ -121,11 +122,11 @@ class Wallet extends Component {
               </button>
             )
           }
-        </section>
-        <section>
+        </MainSection>
+        <TabelaStyle>
           <Tabela handleClickEdit={ this.handleClickEdit } />
-        </section>
-      </main>
+        </TabelaStyle>
+      </MainBody>
     );
   }
 }
