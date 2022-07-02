@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { CompHeader, CompHeaderDiv } from '../Style/Header';
+import { CompHeader } from '../Style/Header';
 
 class Header extends Component {
   render() {
@@ -11,13 +11,17 @@ class Header extends Component {
       const { currency, exchangeRates, value } = dados;
       total += exchangeRates[currency].ask * Number(value);
     });
-
+    console.log(localStorage.getItem('email'));
     return (
       <CompHeader className="header">
-        <CompHeaderDiv className="space-block">
+        <div className="space-block">
           <h1 className="margins">Trybe Wallet</h1>
-          <h2 data-testid="email-field">{`Email: ${setEmail}`}</h2>
-        </CompHeaderDiv>
+          <h2 data-testid="email-field">
+            {`Email: ${
+              setEmail === '' ? localStorage.getItem('email') : setEmail}`}
+
+          </h2>
+        </div>
         <div className="space-block">
           <h2 data-testid="header-currency-field">{`${'BRL'}`}</h2>
           <h2
