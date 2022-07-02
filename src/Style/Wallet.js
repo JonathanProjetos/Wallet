@@ -17,25 +17,25 @@ export const MainBody = styled.main`
     border-radius: 5px;
     background: #ffffff60;
     backdrop-filter: blur(2px);
-    padding: 10px;
-    font-size: 20px;
+    padding: 8px;
+    font-size: 15px;
   }
 
   select {
     border-radius: 5px;
     background: #ffffff60;
     backdrop-filter: blur(2px);
-    padding: 10px;
-    font-size: 20px;
+    padding: 8px;
+    font-size: 15px;
   }
 
   button {
     border-radius: 5px;
     background: #ffffff80;
     backdrop-filter: blur(2px);
-    padding: 10px;
+    padding: 8px;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
   }
 
 
@@ -60,11 +60,11 @@ export const TabelaStyle = styled.section`
       thead{
         tr{
           th{
-            padding: 10px;
+            padding: 8px;
             border: solid 1px black;
             border-radius: 5px;
             background: #ffffff00;
-            //backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
           }
         }
       }
