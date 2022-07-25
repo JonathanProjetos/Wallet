@@ -1,16 +1,31 @@
-# 🚧 README em construção 🚧
+# Wallet
 
-<!-- Olá, Tryber!
+# Contexto
+Está e uma aplicação  para cadastramento  de 'tarefas', nela e possível inserir valor dedicado para gastos e converter valores de real para varias moedas estrangeiras , a aplicação permite inserir,excluir ou editar valores já adicionados há tabela, após fazer o login na aplicação na área superior direito tem o somatório do valores de todas as tabelas e o valor total sempre e atualizado quando adicionado, excluído ou editado um valor na tabela.
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
+## Técnologias usadas
 
-É essencial que você preencha esse documento por conta própria, ok?
+Front-end:
+> Desenvolvido usando: React, Redux, CSS3, HTML5, JavaScript, styled-components
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+## Instalando Dependências
 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
+> Frontend
+```bash
+cd src/
+npm install --save styled-components
+npm install
+``` 
+## Executando aplicação
+* Para rodar o front-end:
 
--->
+  ```
+    cd src/ && npm start
+  ```
+
+## Executando Testes
+
+* Para rodar todos os testes:
+
+  ```
+    npm test
