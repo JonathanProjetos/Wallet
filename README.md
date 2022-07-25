@@ -22,6 +22,8 @@ npm install
   ```
     cd src/ && npm start
   ```
+## Login
+Para acessar a aplicação e necessário usar um e-mail valido neste formato ex:'test@test.com' e a senha deve ser de 6 ou mais caracteres 
 
 ## Executando Testes
 
